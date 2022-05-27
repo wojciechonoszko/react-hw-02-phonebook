@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ContactForm from './components/contactForm/ContactForm';
-
+import Filter from './components/filter/Filter';
+import ContactList from './contactList/ContactList';
+import {v4 as uuid} from 'uuid';
 
 class App extends Component {
 
@@ -51,6 +53,8 @@ render() {
         <div>
             <h1>Phonebook</h1>
             <ContactForm addNewContact={this.addNewContact}/>
+            <h2>Contacts</h2>
+            <Filter filter={this.state.filter} handleChange={this.handleChange}/>
             <ContactList
             contacts={this.getFilteredContacts()}
             deleteContact={this.deleteContact}
