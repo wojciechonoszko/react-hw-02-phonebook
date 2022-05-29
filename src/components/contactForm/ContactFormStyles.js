@@ -18,7 +18,10 @@ export const InputContainer = styled.input`
   border-radius: 4px;
   :focus {
     outline: none;
-    border: 3px solid lightblue;
+    border: 1px solid pink;
+  };
+  :hover {
+    border: 1px solid pink;
   }
 `;
 
@@ -35,10 +38,26 @@ export const ButtonContainer = styled.button`
   background-color: white;
   font-size: 16px;
   cursor: pointer;
-  transition-duration: 0.4s;
+  transition-duration: 0.2s;
   :hover {
-    background-color: lightblue;
+    background-color: pink;
     color: white;
-    border-color: lightblue;
+    border-color: pink;
   }
+`;
+
+export const ButtonListItem = styled(ButtonContainer)`
+  margin-right: 10px;
+  margin-left: auto;
+  height: 30px;
+`;
+
+export const PhonebookContainer = styled.div`
+  margin: auto auto;
+  width: 550px;
+`;
+
+export const ContactsContainer = styled(PhonebookContainer)`
+  
+  
 `;

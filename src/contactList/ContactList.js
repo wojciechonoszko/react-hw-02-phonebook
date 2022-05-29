@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {v4 as uuid} from 'uuid';
 import ContactListItem from '../components/contactListItem/ContactListItem';
+import { ContactListCnt } from '../components/contactListItem/ContactListItemStyles';
+
 
 const ContactList = ({contacts, deleteContact}) => {
   return (
-    <ul>
+    <ContactListCnt>
       {contacts.map(contact => (
         <ContactListItem
           name={contact.name}
@@ -14,7 +16,7 @@ const ContactList = ({contacts, deleteContact}) => {
           deleteContact={() => deleteContact(contact.id)}
         />
       ))}
-    </ul>
+    </ContactListCnt>
   );
 };
 
@@ -27,5 +29,6 @@ ContactList.propTypes = {
     })
   )
 };
+
 
 export default ContactList;

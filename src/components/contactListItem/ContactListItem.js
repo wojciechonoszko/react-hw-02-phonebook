@@ -1,18 +1,19 @@
 import React from 'react';
-import {ButtonContainer} from '../contactForm/ContactFormStyles';
+import {ButtonListItem} from '../contactForm/ContactFormStyles';
 import {ContactListItemContainer} from './ContactListItemStyles';
 import PropTypes from 'prop-types';
 
 const ContactListItem = ({name, number, deleteContact}) => {
     return(
-        <ContactListItemContainer>
+            <ContactListItemContainer>
             <p className="contactListItemText">
                 {name}: {number}
             </p>
-            <ButtonContainer type="button" onClick={deleteContact}>
+            <ButtonListItem type="button" onClick={deleteContact}>
             Delete
-            </ButtonContainer>
-        </ContactListItemContainer>
+            </ButtonListItem>
+            </ContactListItemContainer>
+        
     );
 };
 

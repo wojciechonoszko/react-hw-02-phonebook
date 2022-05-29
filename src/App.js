@@ -3,6 +3,7 @@ import ContactForm from './components/contactForm/ContactForm';
 import Filter from './components/filter/Filter';
 import ContactList from './contactList/ContactList';
 import {v4 as uuid} from 'uuid';
+import { PhonebookContainer, ContactsContainer } from './components/contactForm/ContactFormStyles';
 
 class App extends Component {
 
@@ -51,14 +52,19 @@ deleteContact = id => {
 render() {
     return (
         <div>
-            <h1>Phonebook</h1>
-            <ContactForm addNewContact={this.addNewContact}/>
-            <h2>Contacts</h2>
-            <Filter filter={this.state.filter} handleChange={this.handleChange}/>
-            <ContactList
-            contacts={this.getFilteredContacts()}
-            deleteContact={this.deleteContact}
-            />
+            <PhonebookContainer>
+                <h1>Phonebook</h1>
+                <ContactForm addNewContact={this.addNewContact}/>
+            </PhonebookContainer>
+            <ContactsContainer>
+                <h2>Contacts</h2>
+                <Filter filter={this.state.filter} handleChange={this.handleChange}/>
+                <ContactList
+                contacts={this.getFilteredContacts()}
+                deleteContact={this.deleteContact}
+                />
+            </ContactsContainer>
+            
         </div>
     );
 }
